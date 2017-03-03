@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_LEVEL"  value="DEBUG" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.bpedroso.poc" level="${LOG_LEVEL}" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
